@@ -215,7 +215,6 @@ struct ofono_sim_driver {
 	void (*logical_access)(struct ofono_sim *sim, int session_id,
 			const unsigned char *pdu, unsigned int len,
 			ofono_sim_logical_access_cb_t cb, void *data);
-	/* API version 1 (since 1.23+git28) */
 	void (*open_channel2)(struct ofono_sim *sim, const unsigned char *aid,
 			unsigned int len, ofono_sim_open_channel_cb_t cb,
 			void *data);
