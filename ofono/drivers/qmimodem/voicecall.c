@@ -99,7 +99,7 @@ static void all_call_status_ind(struct qmi_result *result, void *user_data)
 		call->id = call_info.id;
 		call->direction = qmi_to_ofono_direction(call_info.direction);
 
-		if (qmi_to_ofono_status(call_info.state, &call->status)) {
+		if (qmi_to_ofono_status(call_info.state, (int*)&call->status)) {
 			DBG("Ignore call id %d, because can not convert QMI state 0x%x to ofono.",
 			    call_info.id, call_info.state);
 			continue;
